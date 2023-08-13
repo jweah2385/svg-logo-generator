@@ -1,10 +1,3 @@
-// const inquirer = require('inquirer');
-// const fs = require('fs');
-// const shape = require('./lib/shapes.js');
-// const inquirer = require('inquirer');
-// import { prompt } from 'inquirer';
-// const fs = require('fs');
-// const shape = require('./lib/shapes.js');
 const inquirer = require('inquirer');
 const fs = require('fs');
 const shape = require('./lib/shapes.js');
@@ -30,10 +23,7 @@ let questions = () => {
       },
     ])
     .then((data) => {
-      // console.log(JSON.stringify(data));
       const { textAns, shapeAns, colorAns } = data;
-      // console.log(textAns, shapeAns, colorAns);
-
       let userShape;
       if (shapeAns == 'square') {
         const square = new shape.square(colorAns, textAns, shapeAns);
@@ -50,13 +40,11 @@ let questions = () => {
       } else {
         questions();
       }
-      console.log(typeof userShape);
-      fs.writeFile('hello.txt', userShape, (err) => {
-        err ? console.log(err) : console.log();
-      });
     })
-    .catch((error) => {
-      console.error(error);
+    .then((data) => {
+      fs.writeFile('logo.svg', data, (err) => {
+        err ? console.log(err) : console.log('Generated logo.svg');
+      });
     });
 };
 questions();
