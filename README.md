@@ -1,4 +1,4 @@
-# REAMD.md Generater
+# Logo Generater
 
 This is a logo generator, which takes the users reponse to create a simple custome logo.
 
