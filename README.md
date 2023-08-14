@@ -27,7 +27,8 @@ This project is licensed under the MIT License.
 
 ## Preview
 
-![This is a preview of the application](/examples/Assets/Images/share%202.png)
+![This is a preview of the application](https://github.com/jweah2385/svg-logo-generator/assets/134350647/5781662a-2117-4e4f-9273-8fd7e1366574)
+
 
 ## Installation
 
