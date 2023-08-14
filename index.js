@@ -35,7 +35,7 @@ let questions = () => {
     .then((data) => {
       const { textAns, shapeAns, colorAns } = data;
       let userShape;
-      console.log(textAns.length);
+
       if (textAns.length == 3) {
         if (shapeAns == 'square') {
           const square = new shape.square(colorAns, textAns, shapeAns);
