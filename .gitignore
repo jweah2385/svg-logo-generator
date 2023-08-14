@@ -1,0 +1,6 @@
+.package-lock.json/
+.package.json/
+*node_modules
+/Users/jamesweah/Desktop/Challange10/examples/node_modules
+/Users/jamesweah/Desktop/Challange10/examples/package-lock.json
+/Users/jamesweah/Desktop/Challange10/examples/package-lock.json

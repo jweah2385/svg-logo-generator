@@ -8,7 +8,17 @@ let questions = () => {
       {
         type: 'input',
         name: 'textAns',
-        message: 'What text do you want of the logo, must be only 3 letters.',
+        message:
+          'What text do you want of the logo, must be only 3 letters or less.',
+        validate: function (textAns) {
+          if (textAns.length > 3) {
+            console.log(
+              `:  Your input must be three letters or less. Erase your answer and input a response that is up to three letters.`
+            );
+            textAns = '';
+            return inputs();
+          } else return true;
+        },
       },
       {
         type: 'list',
@@ -25,20 +35,24 @@ let questions = () => {
     .then((data) => {
       const { textAns, shapeAns, colorAns } = data;
       let userShape;
-      if (shapeAns == 'square') {
-        const square = new shape.square(colorAns, textAns, shapeAns);
-        userShape = square.render();
-        return userShape;
-      } else if (shapeAns == 'triangle') {
-        const triangle = new shape.triangle(colorAns, textAns, shapeAns);
-        userShape = triangle.render();
-        return userShape;
-      } else if (shapeAns == 'circle') {
-        const circle = new shape.circle(colorAns, textAns, shapeAns);
-        userShape = circle.render();
-        return userShape;
+      console.log(textAns.length);
+      if (textAns.length == 3) {
+        if (shapeAns == 'square') {
+          const square = new shape.square(colorAns, textAns, shapeAns);
+          userShape = square.render();
+          console.log(userShape);
+          return userShape;
+        } else if (shapeAns == 'triangle') {
+          const triangle = new shape.triangle(colorAns, textAns, shapeAns);
+          userShape = triangle.render();
+          return userShape;
+        } else if (shapeAns == 'circle') {
+          const circle = new shape.circle(colorAns, textAns, shapeAns);
+          userShape = circle.render();
+          return userShape;
+        }
       } else {
-        questions();
+        console.log('You did not enter 3 words or a color');
       }
     })
     .then((data) => {
